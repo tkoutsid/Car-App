@@ -2,7 +2,7 @@ import pandas as pd
 import sqlite3
 import numpy as np
 
-df = pd.read_csv("/Users/thomaskoutsidis/Downloads/cars.csv")
+df = pd.read_csv("cars.csv")
 df = df.dropna(subset=[column for column in df.columns if column != "price_drop"])
 def make_boolean(row):
   row["accidents_or_damage"] = bool(row["accidents_or_damage"])
