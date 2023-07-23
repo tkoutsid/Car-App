@@ -5,7 +5,7 @@ conn = sqlite3.connect("Car_Database.db")
 
 st.title("Car Database")
 
-st.table(conn.execute("SELECT * FROM Car"))
+st.table(conn.execute("SELECT * FROM Car").fetchall())
 
 def add_record():
     manufacturer = st.text_input("Manufacturer")
