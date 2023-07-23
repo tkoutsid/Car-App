@@ -1,7 +1,7 @@
 import sqlite3
 import streamlit as st
 
-conn = sqlite3.connect("Full_Car_Database.db")
+conn = sqlite3.connect("/Users/thomaskoutsidis/Downloads/Full_Car_Database.db")
 
 st.title("Car Database")
 
