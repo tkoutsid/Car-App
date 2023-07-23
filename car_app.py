@@ -1,6 +1,7 @@
 import pandas as pd
 import sqlite3
 import numpy as np
+import streamlit as st
 
 df = pd.read_csv("cars.csv")
 
