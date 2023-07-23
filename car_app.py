@@ -3,7 +3,9 @@ import sqlite3
 import numpy as np
 
 df = pd.read_csv("cars.csv")
+
 df = df.dropna(subset=[column for column in df.columns if column != "price_drop"])
+
 def make_boolean(row):
   row["accidents_or_damage"] = bool(row["accidents_or_damage"])
   row["one_owner"] = bool(row["one_owner"])
@@ -11,8 +13,11 @@ def make_boolean(row):
   return row
 
 df = df.apply(make_boolean, axis = 1)
+
 df = df.reset_index(drop=True)
+
 conn = sqlite3.connect("Full_Car_Database.db")
+
 c = conn.cursor()
 c.execute("""CREATE TABLE Car (
   car_id INTEGER PRIMARY KEY,
